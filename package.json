@@ -1,0 +1,49 @@
+{
+  "name": "passport-youmen",
+  "version": "0.1.0",
+  "description": "Youmen authentication strategy for Passport.",
+  "keywords": [
+    "youmen",
+    "passport",
+    "auth",
+    "authn",
+    "authentication",
+    "authz",
+    "authorization",
+    "oauth",
+    "oauth2"
+  ],
+  "author": {
+    "name": "Tao Yuan",
+    "email": "towyuan@outlook.com",
+    "url": "https://github.com/taoyuan/passport-youmen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/taoyuan/passport-youmen.git"
+  },
+  "bugs": {
+    "url": "http://github.com/taoyuan/passport-youmen/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-oauth": "1.x.x"
+  },
+  "devDependencies": {
+    "mocha": "2.x.x",
+    "chai": "3.x.x",
+    "chai-passport-strategy": "0.2.x"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js test/**/*.test.js"
+  }
+}
