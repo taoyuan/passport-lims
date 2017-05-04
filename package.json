@@ -1,9 +1,9 @@
 {
-  "name": "passport-youmen",
+  "name": "passport-lims",
   "version": "0.1.0",
-  "description": "Youmen authentication strategy for Passport.",
+  "description": "Lims authentication strategy for Passport.",
   "keywords": [
-    "youmen",
+    "lims",
     "passport",
     "auth",
     "authn",
@@ -16,14 +16,14 @@
   "author": {
     "name": "Tao Yuan",
     "email": "towyuan@outlook.com",
-    "url": "https://github.com/taoyuan/passport-youmen"
+    "url": "https://github.com/taoyuan/passport-lims"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/taoyuan/passport-youmen.git"
+    "url": "git://github.com/taoyuan/passport-lims.git"
   },
   "bugs": {
-    "url": "http://github.com/taoyuan/passport-youmen/issues"
+    "url": "http://github.com/taoyuan/passport-lims/issues"
   },
   "licenses": [
     {
@@ -33,12 +33,12 @@
   ],
   "main": "./lib",
   "dependencies": {
-    "passport-oauth": "1.x.x"
+    "passport-oauth": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "2.x.x",
+    "mocha": "3.x.x",
     "chai": "3.x.x",
-    "chai-passport-strategy": "0.2.x"
+    "chai-passport-strategy": "1.0.x"
   },
   "engines": {
     "node": ">= 0.4.0"

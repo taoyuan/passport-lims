@@ -1,11 +1,11 @@
-# passport-youmen
+# passport-lims
 
-[![Build](https://travis-ci.org/taoyuan/passport-youmen.svg?branch=master)](https://travis-ci.org/taoyuan/passport-youmen)
-[![Coverage](https://coveralls.io/repos/taoyuan/passport-youmen/badge.svg?branch=master)](https://coveralls.io/r/taoyuan/passport-youmen)
-[![Quality](https://codeclimate.com/github/taoyuan/passport-youmen/badges/gpa.svg)](https://codeclimate.com/github/taoyuan/passport-youmen)
-[![Dependencies](https://david-dm.org/taoyuan/passport-youmen.svg)](https://david-dm.org/taoyuan/passport-youmen)
+[![Build](https://travis-ci.org/taoyuan/passport-lims.svg?branch=master)](https://travis-ci.org/taoyuan/passport-lims)
+[![Coverage](https://coveralls.io/repos/taoyuan/passport-lims/badge.svg?branch=master)](https://coveralls.io/r/taoyuan/passport-lims)
+[![Quality](https://codeclimate.com/github/taoyuan/passport-lims/badges/gpa.svg)](https://codeclimate.com/github/taoyuan/passport-lims)
+[![Dependencies](https://david-dm.org/taoyuan/passport-lims.svg)](https://david-dm.org/taoyuan/passport-lims)
 
-Youmen authentication strategy for [Passport](http://passportjs.org/).
+Lims authentication strategy for [Passport](http://passportjs.org/).
 
 This module lets you authenticate using OAuth 2.0 in your Node.js applications.
 By plugging into Passport, OAuth 2.0 authentication can be easily and
@@ -26,7 +26,7 @@ list so other people can find it.
 
 ## Install
 
-    $ npm install passport-youmen
+    $ npm install passport-lims
 
 ## Usage
 
@@ -38,7 +38,7 @@ the client identifer and secret, are specified as options.  The strategy
 requires a `verify` callback, which receives an access token and profile,
 and calls `done` providing a user.
 
-    passport.use(new YoumenStrategy({
+    passport.use(new LimsStrategy({
         authorizationURL: 'https://www.example.com/oauth2/authorize',
         tokenURL: 'https://www.example.com/oauth2/token',
         clientID: EXAMPLE_CLIENT_ID,
@@ -54,17 +54,17 @@ and calls `done` providing a user.
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'youmen'` strategy, to
+Use `passport.authenticate()`, specifying the `'lims'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
     app.get('/auth/example',
-      passport.authenticate('youmen'));
+      passport.authenticate('lims'));
 
     app.get('/auth/example/callback',
-      passport.authenticate('youmen', { failureRedirect: '/login' }),
+      passport.authenticate('lims', { failureRedirect: '/login' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');

@@ -1,7 +1,7 @@
 var express = require('express')
   , passport = require('passport')
   , util = require('util')
-  , YoumenStrategy = require('../../').Strategy
+  , LimsStrategy = require('../../').Strategy
   , logger = require('morgan')
   , session = require('express-session')
   , bodyParser = require("body-parser")
@@ -15,7 +15,7 @@ var options = {
   authorizationURL: 'http://localhost:8000/oauth/authorize',
   tokenURL: 'http://localhost:8000/oauth/token',
   userProfileURL: 'http://localhost:8000/auth/user',
-  callbackURL: "http://localhost:3001/auth/youmen/callback"
+  callbackURL: "http://localhost:3001/auth/lims/callback"
 };
 
 
@@ -24,7 +24,7 @@ var options = {
 //   serialize users into and deserialize users out of the session.  Typically,
 //   this will be as simple as storing the user ID when serializing, and finding
 //   the user by ID when deserializing.  However, since this example does not
-//   have a database of user records, the complete Youmen profile is serialized
+//   have a database of user records, the complete Lims profile is serialized
 //   and deserialized.
 passport.serializeUser(function (user, done) {
   done(null, user);
@@ -34,18 +34,18 @@ passport.deserializeUser(function (obj, done) {
   done(null, obj);
 });
 
-// Use the YoumenStrategy within Passport.
+// Use the LimsStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
-//   credentials (in this case, an accessToken, refreshToken, and Youmen
+//   credentials (in this case, an accessToken, refreshToken, and Lims
 //   profile), and invoke a callback with a user object.
-passport.use(new YoumenStrategy(options,
+passport.use(new LimsStrategy(options,
   function (accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
     process.nextTick(function () {
 
-      // To keep the example simple, the user's Youmen profile is returned to
+      // To keep the example simple, the user's Lims profile is returned to
       // represent the logged-in user.  In a typical application, you would want
-      // to associate the Youmen account with a user record in your database,
+      // to associate the Lims account with a user record in your database,
       // and return that user instead.
       return done(null, profile);
     });
@@ -86,25 +86,25 @@ app.get('/login', function (req, res) {
   res.render('login', {user: req.user});
 });
 
-// GET /auth/youmen
+// GET /auth/lims
 //   Use passport.authenticate() as route middleware to authenticate the
-//   request.  The first step in Youmen authentication will involve
-//   redirecting the user to youmen.com.  After authorization, Youmen will
-//   redirect the user back to this application at /auth/youmen/callback
-app.get('/auth/youmen',
-  passport.authenticate('youmen'),
+//   request.  The first step in Lims authentication will involve
+//   redirecting the user to lims.com.  After authorization, Lims will
+//   redirect the user back to this application at /auth/lims/callback
+app.get('/auth/lims',
+  passport.authenticate('lims'),
   function (req, res) {
-    // The request will be redirected to Youmen for authentication, so this
+    // The request will be redirected to Lims for authentication, so this
     // function will not be called.
   });
 
-// GET /auth/youmen/callback
+// GET /auth/lims/callback
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  If authentication fails, the user will be redirected back to the
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
-app.get('/auth/youmen/callback',
-  passport.authenticate('youmen', {failureRedirect: '/login'}),
+app.get('/auth/lims/callback',
+  passport.authenticate('lims', {failureRedirect: '/login'}),
   function (req, res) {
     res.redirect('/');
   });
@@ -122,7 +122,7 @@ var server = app.listen(3001, function () {
     host = 'localhost';
   }
 
-  console.log('Passport-Youmen strategy example app listening at http://%s:%s', host, port);
+  console.log('Passport-Lims strategy example app listening at http://%s:%s', host, port);
 });
 
 
