@@ -3,7 +3,7 @@
 [![Build](https://travis-ci.org/taoyuan/passport-lims.svg?branch=master)](https://travis-ci.org/taoyuan/passport-lims)
 [![Coverage](https://coveralls.io/repos/taoyuan/passport-lims/badge.svg?branch=master)](https://coveralls.io/r/taoyuan/passport-lims)
 [![Quality](https://codeclimate.com/github/taoyuan/passport-lims/badges/gpa.svg)](https://codeclimate.com/github/taoyuan/passport-lims)
-[![Dependencies](https://david-dm.org/taoyuan/passport-lims.svg)](https://david-dm.org/taoyuan/passport-lims)
+[![Dependencies](https://david-dm.org/taoyuan/passport-lims.svg)](https://david-dm.org/taoyuan/passport-lims) [![Greenkeeper badge](https://badges.greenkeeper.io/taoyuan/passport-lims.svg)](https://greenkeeper.io/)
 
 Lims authentication strategy for [Passport](http://passportjs.org/).
 
